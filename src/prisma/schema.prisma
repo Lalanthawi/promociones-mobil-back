@@ -9,3 +9,20 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model Record {
+  id                 Int       @id @default(autoincrement())
+  name               String
+  lastName           String
+  phone              Float     @unique
+  email              String    @unique
+  stationName        String?
+  stationLocation    String?
+  termsAndConditions Boolean
+  promotion          Boolean   @default(false)
+  bonusWinner        Boolean   @default(false)
+  bonusWinnerDate    DateTime?
+  granPrixWinner     Boolean   @default(false)
+  granPrixWinnerDate DateTime?
+  photo              String
+}
