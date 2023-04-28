@@ -12,10 +12,11 @@ datasource db {
 
 model Record {
   id                 Int       @id @default(autoincrement())
+  date               DateTime  @default(now())
   name               String
   lastName           String
-  phone              Float     @unique
-  email              String    @unique
+  phone              Float
+  email              String
   stationName        String?
   stationLocation    String?
   termsAndConditions Boolean
